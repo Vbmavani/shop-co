@@ -1,0 +1,76 @@
+@use '../utils/variables' as *;
+@use '../utils/variables-fonts' as *;
+@use '../utils/mixin' as *;
+@use '../modules/global';
+
+.hero-section-wrapper {
+  background-color: $background-color;
+  min-height: 663px;
+  height: 100%;
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @extend .container;
+    @include breakpoint-max($screen-sm-min) {
+      grid-template-columns: 1fr;
+    }
+    min-height: 663px;
+    height: 100%;
+    gap: 20px;
+    .left-hero-section {
+      display: flex;
+      .left-hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-self: center;
+        .hero-section-description {
+          //   font-family: $satoshi-regular;
+          opacity: 60%;
+        }
+        .shop-now {
+          width: 210px;
+        }
+        .hero-stats-container {
+          display: flex;
+          gap: 32px;
+          justify-content: space-between;
+          .stat-item {
+            display: flex;
+            flex-direction: column;
+            h4 {
+              line-height: 54px;
+              @extend .font-40;
+            }
+            p {
+              @extend .font-16;
+              opacity: 60%;
+            }
+          }
+        }
+      }
+      .hero-section-title {
+        @extend .integral700;
+        line-height: 64px;
+
+        @include breakpoint-max($screen-md-min) {
+          line-height: 32px;
+        }
+      }
+    }
+  }
+
+  .right-hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .hero-img {
+      height: 100px;
+      max-height: 663px;
+      height: 100%;
+      margin-bottom: -158px;
+    }
+  }
+}

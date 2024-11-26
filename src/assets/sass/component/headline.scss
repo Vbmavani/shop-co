@@ -1,0 +1,30 @@
+@use '../utils/variables' as *;
+@use '../utils/variables-fonts' as *;
+
+.headline-section {
+  background-color: #000;
+  color: white;
+
+  .headline-content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    .headline-text {
+      display: flex;
+      a {
+        margin-left: 10px;
+      }
+    }
+    a {
+      color: white;
+    }
+    .headline-close-icon {
+      background: transparent;
+      border: none;
+      color: white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

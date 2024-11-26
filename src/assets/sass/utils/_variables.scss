@@ -1,0 +1,46 @@
+$theme: 'light';
+$primary-color: #000;
+$background-color: #f2f0f1;
+
+$satoshi-regular: 'satoshi400';
+$satoshi-bold: 'satoshi700';
+$integral-bold: 'integral700';
+
+$primary-font: 'satoshi400';
+$secondary-font: 'integral700';
+
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$fwblack: 900;
+
+// Small tablets and large smartphones (landscape view)
+$screen-xs-min: 480px;
+$screen-xs-max: 479px;
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+$screen-sm-max: 575px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+$screen-md-max: 767px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+$screen-lg-max: 991px;
+// Large tablets and desktops - ## 1024
+$screen-x-min: 1200px;
+$screen-x-max: 1199px;
+// Large tablets and desktops - ## 1366
+$screen-xl-min: 1380px;
+$screen-xl-max: 1379px;
+// Large desktops more than 13inch ## 1440
+$screen-xll-min: 1480px;
+$screen-xll-max: 1479px;
+// Large desktops more than 1440px ## 1680
+$screen-1600p-min: 1600px;
+$screen-1600p-max: 1599px;
+// Large desktops ## 1920
+$screen-1920p-min: 1920px;
+$screen-1920p-max: 1919px;

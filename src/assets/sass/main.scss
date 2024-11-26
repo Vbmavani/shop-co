@@ -1,0 +1,52 @@
+@use './utils/_variables' as *;
+@use './utils/mixin' as *;
+
+//modules
+@use './modules/global';
+
+//pages
+@use './pages/home.scss';
+
+//components
+@use './component/header.scss';
+@use './component/headline.scss';
+@use './component/button.scss';
+// @use './utils/_variables' as *;
+// @use './utils/mixin' as *;
+
+// %background-color-blue-and-font-18 {
+//   background-color: blue;
+//   font-size: 18px;
+// }
+// body {
+//   @if $theme == 'light' {
+//     background-color: $primary-color;
+//   } @else {
+//     background-color: aqua;
+//   }
+
+//   @for $i from 1 through 5 {
+//     .col-#{$i} {
+//       width: 20% * $i;
+//     }
+//   }
+
+//   .content {
+//     @include flexCenter(flex);
+//     justify-content: end;
+//     @extend %background-color-blue-and-font-18;
+//     font-size: 60px;
+//   }
+//   .content:not(.notblue) {
+//     background-color: yellow;
+//   }
+//   h4 {
+//     font-size: 45px;
+//     color: white;
+//   }
+//   button {
+//     &:hover {
+//       background-color: blue;
+//     }
+//   }
+// }

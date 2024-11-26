@@ -1,0 +1,41 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin flexCenter($display) {
+  display: $display;
+  align-items: center;
+  justify-content: center;
+}
+
+/*====mixin for media query=====*/
+@mixin breakpoint-min($point) {
+  @media only screen and (min-width: $point) {
+    @content;
+  }
+  /*@media only screen (min-width:$point){@content;}*/
+}
+@mixin breakpoint-max($point) {
+  @media only screen and (max-width: $point) {
+    @content;
+  }
+}
+
+@mixin breakpoint-range($point1, $point2) {
+  @media only screen and (min-width: $point1) and (max-width: $point2) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min-height($point) {
+  @media only screen and (min-height: $point) {
+    @content;
+  }
+  /*@media only screen (min-width:$point){@content;}*/
+}
+@mixin breakpoint-max-height($point) {
+  @media only screen and (max-height: $point) {
+    @content;
+  }
+}
