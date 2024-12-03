@@ -1,5 +1,6 @@
 @use '../utils/variables' as *;
 @use '../utils/variables-fonts' as *;
+@use '../utils/mixin' as *;
 
 .headline-section {
   background-color: #000;
@@ -9,6 +10,10 @@
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+    @include breakpoint-max($screen-sm-min) {
+      font-size: 12px;
+    }
+
     .headline-text {
       display: flex;
       a {

@@ -7,6 +7,9 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  @include breakpoint-max($screen-sm-min) {
+    gap: 10px;
+  }
   margin: 24px auto !important;
   .hamburger-menu {
     display: none;
@@ -26,6 +29,10 @@ header {
   .logo {
     @extend .integral700;
     font-size: 32px;
+    @include breakpoint-max($screen-sm-min) {
+      font-size: 24px;
+      flex: 1;
+    }
   }
   .search-bar {
     flex: 1;

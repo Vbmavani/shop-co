@@ -46,6 +46,10 @@ body {
 .container {
   max-width: 1240px;
   margin: auto;
+  padding: 0 32px;
+  @include breakpoint-max($screen-md-min) {
+    padding: 0 16px;
+  }
 }
 
 ul,
@@ -55,11 +59,38 @@ li {
   list-style: none;
 }
 
+.font-12 {
+  font-size: 12px;
+}
+.font-14 {
+  font-size: 14px;
+  font-weight: $regular;
+  @include breakpoint-max($screen-md-min) {
+    font-size: 12px;
+  }
+}
+
 .font-16 {
   font-size: 16px;
   font-weight: $regular;
   @include breakpoint-max($screen-md-min) {
     font-size: 14px;
+  }
+}
+
+.font-20 {
+  font-size: 20px;
+  font-weight: $regular;
+  @include breakpoint-max($screen-md-min) {
+    font-size: 16px;
+  }
+}
+
+.font-24 {
+  font-size: 24px;
+  font-weight: $regular;
+  @include breakpoint-max($screen-md-min) {
+    font-size: 20px;
   }
 }
 
@@ -73,6 +104,19 @@ li {
     font-size: 24px;
   }
 }
+.font-48 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: $semibold;
+  @include breakpoint-max($screen-md-min) {
+    font-size: 40;
+    line-height: 40px;
+  }
+  @include breakpoint-max($screen-sm-max) {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
 
 .font-64 {
   font-size: 64px;
@@ -81,6 +125,6 @@ li {
     font-size: 42px;
   }
   @include breakpoint-max($screen-sm-max) {
-    font-size: 32px;
+    font-size: 36px;
   }
 }

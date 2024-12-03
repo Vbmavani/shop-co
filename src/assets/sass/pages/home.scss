@@ -7,19 +7,24 @@
   background-color: $background-color;
   min-height: 663px;
   height: 100%;
+
   .hero-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    @extend .container;
     @include breakpoint-max($screen-sm-min) {
       grid-template-columns: 1fr;
+      .container {
+        all: unset;
+      }
     }
     min-height: 663px;
     height: 100%;
     gap: 20px;
     .left-hero-section {
       display: flex;
+      @include breakpoint-max($screen-sm-min) {
+        margin-top: 40px;
+      }
       .left-hero-content {
         display: flex;
         flex-direction: column;
@@ -31,11 +36,19 @@
         }
         .shop-now {
           width: 210px;
+          @include breakpoint-max($screen-sm-max) {
+            grid-template-columns: 1fr;
+            width: 100%;
+          }
         }
         .hero-stats-container {
           display: flex;
           gap: 32px;
           justify-content: space-between;
+          @include breakpoint-max($screen-sm-max) {
+            justify-content: center;
+            flex-wrap: wrap;
+          }
           .stat-item {
             display: flex;
             flex-direction: column;
@@ -71,6 +84,165 @@
       max-height: 663px;
       height: 100%;
       margin-bottom: -158px;
+      @include breakpoint-max($screen-sm-max) {
+        margin-bottom: unset;
+      }
+    }
+  }
+}
+
+.company-logos-wrapper {
+  background-color: black;
+  padding: 44px 0;
+  .company-logos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    img {
+      max-height: 20px;
+      height: 100%;
+    }
+  }
+}
+
+.home-section {
+  .home-section-title {
+    align-content: center;
+    text-align: center;
+    padding: 32px 0;
+    text-transform: uppercase;
+  }
+  .view-all-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 32px;
+  }
+}
+
+.new-arrival-products,
+.top-selling-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  @include breakpoint-max($screen-md-min) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint-max($screen-sm-min) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  .product-img {
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+  }
+  .product-title {
+    font-weight: $bold;
+    display: -webkit-box; /* Use a flexible box layout */
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    line-clamp: 4; /* Standard property for compatibility */
+    -webkit-box-orient: vertical; /* Set the box's orientation to vertical */
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis at the end of truncated content */
+  }
+  .product-rating {
+    display: flex;
+    gap: 13px;
+  }
+  .product-prices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .discounted-price-label {
+      font-weight: 700;
+    }
+    .without-discount-price-label {
+      opacity: 40%;
+    }
+    .percentage-discount {
+      // padding: 6px 14px;
+      border-radius: 62px;
+      background-color: #ff33331a;
+      // opacity: 10%;
+      .percentage-discount-text {
+        color: #ff3333;
+        font-size: 12px;
+        padding: 0 13.5px;
+      }
+    }
+  }
+  .rating-label {
+  }
+}
+
+.divider {
+  border: 1px solid #0000001a;
+  margin: 32px auto; // not taking top margin
+}
+
+.browse-by-dress-style-section {
+  background-color: #f0f0f0;
+  border-radius: 40px;
+  padding: 40px;
+  .dress-styles-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    grid-auto-rows: 300px;
+
+    :first-child,
+    :last-child {
+      grid-column: span 2;
+    }
+    @include breakpoint-max($screen-md-min) {
+      grid-template-rows: repeat(4, 190px);
+      grid-template-columns: 1fr;
+      :first-child,
+      :last-child {
+        grid-column: unset;
+      }
+    }
+    > div {
+      background-color: white;
+      border-radius: 20px;
+      padding: 25px 36px;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: '';
+
+        position: absolute;
+        left: 85px;
+        overflow: hidden;
+        height: 300px;
+        width: 100%;
+        object-fit: contain;
+        top: 0;
+      }
+      h1 {
+        position: relative;
+      }
+    }
+    .casual-style {
+      &::before {
+        content: '';
+        background-image: url(/src/assets/images/styles/casual.png);
+      }
+    }
+    .second-row-style {
+      display: grid;
+      flex-grow: 1;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      height: 289px;
+      > div {
+        background-color: yellow;
+        border: 1px solid blue;
+      }
     }
   }
 }
