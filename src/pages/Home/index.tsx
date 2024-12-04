@@ -6,6 +6,7 @@ import VersaceLogo from '../../assets/svg/company-logos/versace.svg';
 import ZaraLogo from '../../assets/svg/company-logos/zara.svg';
 import GucciLogo from '../../assets/svg/company-logos/gucci.svg';
 import PradaLogo from '../../assets/svg/company-logos/prada.svg';
+import RatingStar from '../../assets/svg/rating-start.svg';
 import CalvinKleinLogo from '../../assets/svg/company-logos/calvin-klein.svg';
 import ProductCard from '../../components/ProductCard';
 
@@ -107,7 +108,7 @@ const HomePage: React.FC<HomeProps> = (props) => {
           })}
         </div>
         <div className="view-all-wrapper">
-          <button className="secondary-button font-16">View All</button>
+          <button className="secondary-btn font-16">View All</button>
         </div>
       </section>
       <div className="container">
@@ -158,7 +159,7 @@ const HomePage: React.FC<HomeProps> = (props) => {
           })}
         </div>
         <div className="view-all-wrapper">
-          <button className="secondary-button font-16">View All</button>
+          <button className="secondary-btn font-16">View All</button>
         </div>
       </section>
       <section className="home-section container">
@@ -181,6 +182,108 @@ const HomePage: React.FC<HomeProps> = (props) => {
           </div>
         </div>
       </section>
+      <section className="home-section our-happy-customer-section ">
+        <div className="happy-customer-header container">
+          <h1 className="home-section-title">Our Happy Customer</h1>
+          <span className="left-right-icons">
+            <i className="fas fa-arrow-left"></i>
+            <i className="fas fa-arrow-right"></i>
+          </span>
+        </div>
+        <div className="happy-customer-slider">
+          {[
+            {
+              name: 'Sarah M.',
+              description: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I have bought has exceeded my expectations.”`,
+              rating: 5,
+            },
+            {
+              name: 'Sarah M.',
+              description: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I have bought has exceeded my expectations.”`,
+              rating: 5,
+            },
+            {
+              name: 'Sarah M.',
+              description: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I have bought has exceeded my expectations.”`,
+              rating: 5,
+            },
+            {
+              name: 'Sarah M.',
+              description: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I have bought has exceeded my expectations.”`,
+              rating: 5,
+            },
+            // {
+            //   name: 'Sarah M.',
+            //   description: `"I'm blown away by the quality and style of the clothes I received from Shop.co.I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I have bought has exceeded my expectations.”`,
+            //   rating: 5,
+            // },
+          ].map((customer) => {
+            return (
+              <div className="customer-card" key={customer.name}>
+                <div className="customer-feedback-rating-icons">
+                  <div className="product-rating-stars">
+                    {[...Array(customer.rating)].map((_, index) => (
+                      <img src={RatingStar} alt="rating-image" key={index} />
+                    ))}
+                  </div>
+                  <div className="customer-name font-20">
+                    <h4>{customer.name}</h4>
+                    <i className="fa fa-check" aria-hidden="true"></i>
+                  </div>
+                  <p className="feedback-description font-16">
+                    {customer.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      <section className="section subscribe-section container">
+        <div className="subscribe-content">
+          <h3 className="font-40"> Stay Upto Date about our latest offers</h3>
+          <div className="subscribe-input">
+            <input type="text" placeholder="Enter your email address" />
+            <button className="secondary-btn subscribe-btn">Subscribe</button>
+          </div>
+        </div>
+      </section>
+      <footer className="footer-main-section">
+        <div className="container footer-wrapper">
+          <div className="footer-left-section ">
+            <div className="footer-logo">
+              <h1>Shop.co</h1>
+            </div>
+            <div className="footer-menu">
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>Products</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+              </ul>
+            </div>
+            <div className="footer-social-icons">
+              <i className="fab fa-facebook"></i>
+              <i className="fab fa-twitter"></i>
+              <i className="fab fa-instagram"></i>
+              <i className="fab fa-linkedin"></i>
+            </div>
+          </div>
+          <div className="company-section">
+            <h4 className='footer-section-title'>Company</h4>
+            <ul className=''>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>Products</li>
+              <li>About Us</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
